@@ -1,0 +1,46 @@
+.day-cell {
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+  }
+  
+  .day-number {
+    font-weight: bold;
+  }
+  
+  .holiday-name {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .add-holiday-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    z-index: 10;
+  }
+  
+  .holiday-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .add-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .add-button:hover {
+    background-color: darkgreen;
+  }
+  
