@@ -1,6 +1,6 @@
 module github.com/sg0097/backend
 
-go 1.24.0
+go 1.20
 
 require (
 	github.com/felixge/httpsnoop v1.0.3 // indirect
