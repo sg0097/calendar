@@ -8,13 +8,25 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
+	"github.com/joho/godotenv" // Import godotenv for loading .env file
 	"github.com/sg0097/backend/db"
 	"github.com/sg0097/backend/handlers"
 )
 
 func main() {
-	// Connect to MongoDB (update the URI as needed)
-	mongoURI := "mongodb://localhost:27017"
+	// Load .env file
+	err := godotenv.Load()
+	if err != nil {
+		log.Println("Warning: No .env file found. Using environment variables instead.")
+	}
+
+	// Get MongoDB URI from environment variable
+	mongoURI := os.Getenv("MONGO_URI")
+	if mongoURI == "" {
+		log.Fatal("Error: MONGO_URI is not set in the environment variables")
+	}
+
+	// Connect to MongoDB
 	db.Connect(mongoURI)
 
 	// Set up the router
@@ -55,4 +67,3 @@ func main() {
 	log.Printf("Server running on port %s", port)
 	log.Fatal(http.ListenAndServe(":"+port, handler))
 }
-
