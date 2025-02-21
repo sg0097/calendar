@@ -19,7 +19,7 @@ const Calendar = () => {
       const year = currentDate.getFullYear();
       try {
         const response = await fetch(
-          `http://localhost:8089/api/holidays?year=${year}&month=${month}`
+          `https://calendar-3.onrender.com/api/holidays?year=${year}&month=${month}`
         );
         const data = await response.json();
         setHolidays(data || []);
@@ -58,7 +58,7 @@ const Calendar = () => {
   const fetchYearHolidays = async () => {
     const year = currentDate.getFullYear();
     try {
-      const response = await fetch(`http://localhost:8089/api/holidays?year=${year}`);
+      const response = await fetch(`https://calendar-3.onrender.com/api/holidays?year=${year}`);
       const data = await response.json();
 
       // Ensure only holidays for the selected year are stored

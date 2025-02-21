@@ -8,7 +8,7 @@ const DayCell = ({ date, holidays, refreshHolidays }) => {
   const addHoliday = async () => {
     const payload = { date, name: holidayName, description: holidayDesc };
     try {
-      const response = await fetch("http://localhost:8089/api/holidays", {
+      const response = await fetch("https://calendar-3.onrender.com/api/holidays", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -28,7 +28,7 @@ const DayCell = ({ date, holidays, refreshHolidays }) => {
 
   const deleteHoliday = async (holidayId) => {
     try {
-      const response = await fetch(`http://localhost:8089/api/holidays/${holidayId}`, {
+      const response = await fetch(`https://calendar-3.onrender.com/api/holidays/${holidayId}`, {
         method: "DELETE",
       });
 
