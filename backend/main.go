@@ -49,7 +49,7 @@ func main() {
 
 	// Configure CORS using rs/cors package
 	c := cors.New(cors.Options{
-		AllowedOrigins:   []string{"*"}, // Allow all origins for development
+		AllowedOrigins:   []string{"https://calendar-fron-cbkk2c7j1-shivam2.vercel.app/"}, // Allow all origins for development
 		AllowedMethods:   []string{"GET", "POST", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"Content-Type", "Authorization"},
 		AllowCredentials: true,
